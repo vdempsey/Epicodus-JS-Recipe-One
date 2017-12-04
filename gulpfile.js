@@ -25,9 +25,7 @@ var isProductionBuild = utilities.env.production;
 gulp.task('build', ['ts-build', 'sass-build', 'bower-build'], function(){});
 
 // =========== Typescript =========== //
-gulp.task('ts-build', ['ts-clean'], shell.task([
-  'tsc'
-]));
+gulp.task('ts-build', ['ts-clean'], shell.task(['tsc --outDir app']));
 
 gulp.task('ts-clean', function(){
   return del(['app/*.js', 'app/*.js.map']);
@@ -77,7 +75,7 @@ gulp.task('watch', ['build'], function() {
   gulp.watch(['resources/js/*.js'], ['js-sync']);
   gulp.watch(['*.html'], ['html-sync']);
   gulp.watch(['resources/styles/*.css', 'resources/styles/*.scss'], ['css-sync']);
-  gulp.watch(['app/*.ts'], ['ts-sync']);
+  gulp.watch(['src/*.ts'], ['ts-sync']);
 });
 
 gulp.task('js-sync', function(){
