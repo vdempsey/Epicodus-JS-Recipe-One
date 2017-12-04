@@ -6,7 +6,6 @@
 
 ### Installation Instructions
 * Clone to desktop
-* Open it with text Editor
 * type npm install and wait for it to complete
 * type bower install and wait for it to complete
 * type gulp serve
